@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="assets/header.jpg" style="border-radius: 10px"></img>
+    <img src="assets/header.jpg" style="border-radius: 10%"></img>
 </div>
 
 ___
