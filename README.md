@@ -6,7 +6,7 @@ ___
 
 # Semenzaio smart
 <div align="center">
-    <img src="assets/logo-w.png" width="200px"></imag>
+    <img src="assets/logo-w.png" width="200px" style="border-radious: 10px"></imag>
 </div>
 
 **Autori**: Alberto Rizzi, Lorenzo Marcolli
