@@ -10,10 +10,14 @@ export default function Layout() {
                 backgroundColor: '#537b2f',
                 
             }}>
-               
- <Slot />
-                
-               
+   
+                <Stack screenOptions={{
+                    headerStyle: {
+                        backgroundColor: '#537b2f',
+                        borderBottomWidth: 0,
+                    },
+                    headerTintColor: '#fff',
+                }}  />
             </SafeAreaView>
       
 

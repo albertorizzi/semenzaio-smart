@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
+import tw from '../../tailwind';
 
 interface Props {
     children: string;
@@ -7,17 +8,8 @@ interface Props {
 
 const Title: React.FC<Props> = ({ children }) => {
     return (
-        <Text style={styles.title}>{children}</Text>
+        <Text style={tw.style('text-4xl font-bold text-white py-6')}>{children}</Text>
     );
 };
-
-const styles = StyleSheet.create({
-    title: {
-        fontWeight: 'bold',
-        fontSize: 32,
-        paddingVertical: 16,
-        color: '#fff',
-    },
-});
 
 export default Title;

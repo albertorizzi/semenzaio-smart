@@ -1,42 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Subtitle from '../text/Subtitle';
-import useClient from '../../network/client/useClient';
-import { Crop } from '../../shared/types';
+import React, { useEffect, useState } from "react";
+import { View, Text } from "react-native";
+import Subtitle from "../text/Subtitle";
+import { Crop } from "../../shared/types";
+import tw from "../../tailwind";
+import { db } from "../../lib/firebase.config";
+import { ref, onValue } from "firebase/database";
+import { capitalizeFirstLetter } from "../../utils/string";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import SensorCard from "./SensorCard";
 
 const CurrentValue = () => {
+  const [currentCrop, setCurrentCrop] = useState<string>("");
+  const [currentValue, setCurrentValue] = useState<Crop | null>();
 
-    const client = useClient()
+  useEffect(() => {
+    const currentCrop = ref(db, "configuration/currentCrop");
+    onValue(currentCrop, (snapshot) => {
+      const data = snapshot.val();
+      setCurrentCrop(data);
+    });
 
-    const [currentCrop, setCurrentCrop] = useState<Crop | null>(null)
+    const currentValue = ref(db, "logs");
+    onValue(currentValue, (snapshot) => {
+      const data = snapshot.val();
+      const firstLogKey = Object.keys(data)[0];
+      const firstLog = data[firstLogKey];
+      setCurrentValue(firstLog);
+    });
+  }, []);
 
-    useEffect(() => {
-        client.config.getCurrentCrop().then((c)=>{
-            console.log(c.data)
-        })
-    }, [])
+  return (
+    <View style={tw.style("bg-white p-6 rounded-md")}>
+      <Subtitle>Piantagione attuale</Subtitle>
+      <Text style={tw.style("text-lg text-black mb-4")}>
+        {capitalizeFirstLetter(currentCrop)}
+      </Text>
+      <Subtitle>Valori attuali</Subtitle>
+      <View>
+        {currentValue && (
+          <View style={tw.style("gap-2 mt-2")}>
+            <SensorCard
+              iconName="water-outline"
+              title="Umidità"
+              value={`${currentValue.tempHum.hum.toPrecision(3)}%`}
+            />
 
-
-    return (
-        <View style={styles.container}>
-            <Subtitle>Valori attuali</Subtitle>
-            <Text
-            style={{
-                color: '#000',
-            }}
-            >{currentCrop?.humidity}</Text>
-        </View>
-    );
+            <SensorCard
+              iconName="thermometer-outline"
+              title="Temperatura"
+              value={`${currentValue.tempHum.temp.toPrecision(3)}%`}
+            />
+          </View>
+        )}
+      </View>
+    </View>
+  );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        padding: 24,
-        borderRadius: 8,
-        backgroundColor: "#fff",
-  
-      },
-});
-
 
 export default CurrentValue;

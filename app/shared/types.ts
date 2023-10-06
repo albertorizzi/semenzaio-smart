@@ -3,10 +3,15 @@ export type LightHours = {
     vegetativePhase: number;
 }
 
+export type TempHum = {
+    temp: number;
+    hum: number;
+}
+
 export type Crop = {
-    humidity: number;
+   
     soilHumidity: number;
-    temperature: number;
+    tempHum: TempHum;
     lightHours: LightHours;
 }
 
