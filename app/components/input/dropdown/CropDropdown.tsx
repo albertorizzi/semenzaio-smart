@@ -46,25 +46,7 @@ const CropDropdown: React.FC<Props> = ({ setCrop, crop }) => {
                 isSearchable
                 primaryColor={'deepskyblue'}
             />
-                <View>
-                    {
-                        crop && (
-                            <View style={tw.style("text-black")}>
-                                {
-                                    crop.setting && (
-                                        <View>
-                                        <SensorCard 
-                                        iconName='water-outline'
-                                        title='Umidità'
-                                        value={`${crop.setting.humidity.toPrecision(3)}%`}
-                                        />
-                                        </View>
-                                    )
-                                }
-                            </View>
-                        )
-                    }
-                </View>
+                
             </View>
            
  

@@ -1,6 +1,6 @@
 export type LightHours = {
     fiorituraPhase: number;
-    vegetativePhase: number;
+    vegetativaPhase: number;
 }
 
 export type TempHum = {
@@ -9,7 +9,6 @@ export type TempHum = {
 }
 
 export type Crop = {
-   
     soilHumidity: number;
     tempHum: TempHum;
     lightHours: LightHours;
@@ -30,3 +29,5 @@ export interface ICrop {
         lightHours: LightHours;
     };
 }
+
+export type ICropSettingsKey = "humidity" | "temperature" | "soilHumidity" | "lightHours" | "fiorituraPhase" | "vegetativaPhase";
