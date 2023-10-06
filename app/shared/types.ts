@@ -20,3 +20,13 @@ export type Configuration = {
     currentCrop: Crop;
     ipAddress: string;
 }
+
+export interface ICrop {
+    name: string;
+    setting: {
+        humidity: number;
+        temperature: number;
+        soilHumidity: number;
+        lightHours: LightHours;
+    };
+}
