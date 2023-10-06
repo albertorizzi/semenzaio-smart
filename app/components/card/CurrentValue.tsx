@@ -23,9 +23,11 @@ const CurrentValue = () => {
     const currentValue = ref(db, "logs");
     onValue(currentValue, (snapshot) => {
       const data = snapshot.val();
-      const firstLogKey = Object.keys(data)[0];
-      const firstLog = data[firstLogKey];
-      setCurrentValue(firstLog);
+      const logKeys = Object.keys(data);
+      const lastLogKey = logKeys[logKeys.length - 1]; // Get the last key
+
+      const lastLog = data[lastLogKey];
+      setCurrentValue(lastLog);
     });
   }, []);
 

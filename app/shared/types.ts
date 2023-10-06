@@ -20,6 +20,11 @@ export type Configuration = {
     ipAddress: string;
 }
 
+export type Log = {
+    tempHum: TempHum;
+    timestamp: number;
+}
+
 export interface ICrop {
     name: string;
     setting: {
