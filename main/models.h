@@ -25,6 +25,8 @@ struct TempHum {
 
 struct SensorsValue {
   TempHum tempHum;
+  int luminosity;
+  int soilMoisture;
 };
 
 Crop cropConfiguration;
@@ -38,5 +40,14 @@ SensorsValue sensorsValue;
 // PIN TEMP AND HUM
 #define DHTPIN 2
 #define DHTTYPE DHT11
+
+#define LUMINOSITYPIN A0
+
+#define HYGROMETERPIN A1
+
+
+
+#define MAX_VALUE_LUMINOSITY 1000
+#define MIN_VALUE_LUMINOSITY 20
 
 DHT dht(DHTPIN, DHTTYPE);

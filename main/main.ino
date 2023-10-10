@@ -6,10 +6,12 @@
 
 #include "models.h"
 
-#include "utils.h"
+// #include "utils.h"
 #include "firebase.h"
 #include "connectionWifiManager.h"
 #include "read_temp_hum.h"
+#include "readLuminosity.h"
+#include "readHygrometer.h"
 
 
 
@@ -46,6 +48,10 @@ void readSensors() {
 
   // Temperature
   readTempHum();
+
+  readLuminosity();
+
+  readHygrometer();
 }
 
 void manageActuators() {

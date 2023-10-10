@@ -71,6 +71,12 @@ void sendLogSensors() {
   payload["tempHum"]["temp"] = sensorsValue.tempHum.temp;
   payload["tempHum"]["hum"] = sensorsValue.tempHum.hum;
 
+
+  payload["luminosity"] = sensorsValue.luminosity;
+  payload["soilMoisture"] = sensorsValue.soilMoisture;
+
+  payload["timestamp"][".sv"] = "timestamp";
+
   // Serialize the JSON object to a string
   String jsonString;
   serializeJson(jsonDoc, jsonString);
