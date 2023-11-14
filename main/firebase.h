@@ -60,8 +60,7 @@ void getConfiguration() {
   cropConfiguration.humidity = r["crops"][currentCrop]["humidity"].as<int>();
   cropConfiguration.soilHumidity = r["crops"][currentCrop]["soilHumidity"].as<int>();
   cropConfiguration.temperature = r["crops"][currentCrop]["temperature"].as<int>();
-  cropConfiguration.lightHours.fiorituraPhase = r["crops"][currentCrop]["lightHours"]["fiorituraPhase"].as<int>();
-  cropConfiguration.lightHours.vegetativaPhase = r["crops"][currentCrop]["lightHours"]["vegetativaPhase"].as<int>();
+  cropConfiguration.lightPercentage = r["crops"][currentCrop]["lightPercentage"].as<int>();
 }
 
 void sendLogSensors() {

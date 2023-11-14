@@ -16,6 +16,8 @@ void printWifiStatus() {
   Serial.print("IP Address: ");
   Serial.println(ip);
 
+  matrix.loadFrame(happy); 
+
   DynamicJsonDocument doc(1024);
 
   String payload;

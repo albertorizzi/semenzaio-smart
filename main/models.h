@@ -1,14 +1,10 @@
 
-struct LightHours {
-  int vegetativaPhase;
-  int fiorituraPhase;
-};
 
 struct Crop {
   int temperature;
   int humidity;
   int soilHumidity;
-  LightHours lightHours;
+  int lightPercentage;
 };
 
 struct Configuration {
@@ -35,6 +31,8 @@ WiFiSSLClient client;
 
 SensorsValue sensorsValue;
 
+ArduinoLEDMatrix matrix;
+
 
 // sensors
 // PIN TEMP AND HUM
@@ -45,9 +43,30 @@ SensorsValue sensorsValue;
 
 #define HYGROMETERPIN A1
 
+#define HEATER_PIN 3
+#define LIGHT_PIN 4
+#define PUMP_PIN 5
+#define FAN_PIN 6
+
 
 
 #define MAX_VALUE_LUMINOSITY 1000
 #define MIN_VALUE_LUMINOSITY 20
 
 DHT dht(DHTPIN, DHTTYPE);
+
+enum ReleStatus {
+  ON = LOW,
+  OFF = HIGH
+};
+
+const uint32_t happy[] = {
+  0x19819,
+  0x80000001,
+  0x81f8000
+};
+const uint32_t heart[] = {
+  0x3184a444,
+  0x44042081,
+  0x100a0040
+};
