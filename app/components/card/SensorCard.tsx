@@ -11,7 +11,7 @@ type SensorCardProps = {
 
 const SensorCard: React.FC<SensorCardProps> = ({ iconName, title, value }) => {
     return (
-        <View style={tw.style('flex flex-row items-center w-max border rounded p-4')}>
+        <View style={tw.style('flex flex-row items-center border rounded p-4')}>
             <Ionicons name={iconName} size={60} color="black" />
             <View>
                 <Text style={tw.style('text-black')}>{title}</Text>

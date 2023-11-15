@@ -15,7 +15,6 @@ function LineLogChart() {
     onValue(currentCrop, (snapshot) => {
       const data = snapshot.val();
       setLogs(Object.values(data));
-      console.log(Object.values(data));
     });
   }, []);
 

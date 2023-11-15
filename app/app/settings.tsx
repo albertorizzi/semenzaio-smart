@@ -8,7 +8,7 @@ import ButtonIcon from "../components/button/ButtonIcon";
 import Modal from "react-native-modal";
 import { validateCrop } from "../utils/input";
 import { db } from "../lib/firebase.config";
-import { ref, set } from "firebase/database";
+import { onValue, ref, set } from "firebase/database";
 import Toast from 'react-native-toast-message';
 
 export default function Page() {
@@ -17,11 +17,36 @@ export default function Page() {
   const [cropValueModified, setCropValueModified] =
     useState<ICropSettingsKey | null>();
 
-  const saveCrop = () => {
+  const saveCrop = async() => {
+    console.log(crop);
     if (crop) {
       if (validateCrop(crop).ok) {
         set(ref(db, "configuration/crops/" + crop.name), crop.setting);
         set(ref(db, "configuration/currentCrop"), crop.name);
+        
+        // get ipAddress from db
+        try {
+        const ipAddress = ref(db, "configuration/ipAddress");
+        onValue(ipAddress, async (snapshot) => {
+          const data = snapshot.val();
+    
+        
+        console.log(data);
+        if (data) {
+          await fetch(`http://${data}/configuration`)
+        }
+      });
+      } catch (error) {
+        console.log("error");
+        console.log(error);
+      }
+  
+
+        Toast.show({
+          type: 'success',
+          text1: 'Impostazioni salvate',
+          position: 'bottom',
+        });
       } else {
         console.log(validateCrop(crop).error);
         Toast.show({
@@ -41,43 +66,7 @@ export default function Page() {
 
   // modifify specific attribute od crop state
   const modifyCrop = (attribute: ICropSettingsKey, value: any) => {
-    if (attribute === "vegetativaPhase") {
-      setCrop((prevState) => {
-        if (prevState) {
-          return {
-            ...prevState,
-            setting: {
-              ...prevState.setting,
-              lightHours: {
-                ...prevState.setting.lightHours,
-                vegetativaPhase: parseInt(value),
-              },
-            },
-          };
-        }
-        return prevState;
-      });
-      return;
-    }
-
-    if (attribute === "fiorituraPhase") {
-      setCrop((prevState) => {
-        if (prevState) {
-          return {
-            ...prevState,
-            setting: {
-              ...prevState.setting,
-              lightHours: {
-                ...prevState.setting.lightHours,
-                fiorituraPhase: parseInt(value),
-              },
-            },
-          };
-        }
-        return prevState;
-      });
-      return;
-    }
+    
 
     setCrop((prevState) => {
       if (prevState) {
@@ -138,27 +127,17 @@ export default function Page() {
 
           <ButtonIcon
             onPress={() => {
-              openModal("vegetativaPhase");
+              openModal('lightPercentage');
             }}
             title={
-              "Ore di luce vegetativa: " +
-              crop?.setting.lightHours.vegetativaPhase
+              "Percentuale luce: " +
+              crop?.setting.lightPercentage + " %"
             }
             rightIconName="chevron-forward"
             variant="white"
           />
 
-          <ButtonIcon
-            onPress={() => {
-              openModal("fiorituraPhase");
-            }}
-            title={
-              "Ore di luce fioritura: " +
-              crop?.setting.lightHours.fiorituraPhase
-            }
-            rightIconName="chevron-forward"
-            variant="white"
-          />
+          
 
           <ButtonIcon
             onPress={() => {

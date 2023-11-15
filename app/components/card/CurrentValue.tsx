@@ -43,8 +43,14 @@ const CurrentValue = () => {
           <View style={tw.style("gap-2 mt-2")}>
             <SensorCard
               iconName="water-outline"
-              title="Umidità"
+              title="Umidità aria"
               value={`${currentValue.tempHum.hum.toPrecision(3)}%`}
+            />
+
+<SensorCard
+              iconName="water-outline"
+              title="Umidità terreno"
+              value={`${currentValue.soilMoisture}%`}
             />
 
             <SensorCard
@@ -52,6 +58,15 @@ const CurrentValue = () => {
               title="Temperatura"
               value={`${currentValue.tempHum.temp.toPrecision(3)}%`}
             />
+
+            <SensorCard
+              iconName="sunny-outline"
+              title="Luce"
+              value={`${currentValue.luminosity}%`}
+            />
+
+
+
           </View>
         )}
       </View>
