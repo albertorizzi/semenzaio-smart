@@ -76,7 +76,7 @@ Semina della coltura di pomodori, posizionamento del sensore di umidità del ter
 
 <div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
 
-[![Watch the video](https://img.youtube.com/vi/VanfRF-iYK8/0.jpg)](https://www.youtube.com/watch?v=VanfRF-iYK8)
+[![Watch the video](https://img.youtube.com/vi/oXTzStsKrd4/0.jpg)](https://www.youtube.com/watch?v=oXTzStsKrd4)
 
 </div>
 
@@ -86,7 +86,7 @@ Cambio della coltura attuale tramite la pagina di configurazione dell'app. La nu
 
 <div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
 
-[![Watch the video](https://img.youtube.com/vi/AzrMw2Qhdq0/0.jpg)](https://www.youtube.com/watch?v=AzrMw2Qhdq0)
+[![Watch the video](https://img.youtube.com/vi/LiDUl17lJrE/0.jpg)](https://www.youtube.com/watch?v=LiDUl17lJrE)
 
 </div>
 
@@ -95,7 +95,7 @@ Cambiando la luminosità ambientale, il valore di luminosità scende sotto la so
 
 <div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
 
-[![Watch the video](https://img.youtube.com/vi/fI13DSHIk4M/0.jpg)](https://www.youtube.com/watch?v=fI13DSHIk4M)
+[![Watch the video](https://img.youtube.com/vi/DOKdjEj1GwU/0.jpg)](https://www.youtube.com/watch?v=DOKdjEj1GwU)
 
 </div>
 
@@ -104,15 +104,24 @@ Cambiando i parametri necessari di umidità del suono, viene suparata la soglia 
 
 <div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
 
-[![Watch the video](https://img.youtube.com/vi/8Q1bnotlYYE/0.jpg)](https://www.youtube.com/watch?v=8Q1bnotlYYE)
+[![Watch the video](https://img.youtube.com/vi/_HplzdNERQg/0.jpg)](https://www.youtube.com/watch?v=_HplzdNERQg)
 
 </div>
 
-### Ventola
+### Accensione ventola
 Cambiando il valore ON/OFF sulla App Mobile, si accende e spegne la ventola.
 
 <div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
 
-[![Watch the video](https://img.youtube.com/vi/9ND9dOCLHKQ/0.jpg)](https://www.youtube.com/watch?v=9ND9dOCLHKQ)
+[![Watch the video](https://img.youtube.com/vi/NtAnDMgpZjI/0.jpg)](https://www.youtube.com/watch?v=NtAnDMgpZjI)
+
+</div>
+
+### Fasi della crescita della coltura del pomodoro
+Fotogrammi relativi alla crescita della coltura del pomodoto in ambiente controllato, 7 giorni.
+
+<div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
+
+[![Watch the video](https://img.youtube.com/vi/i4-SfTGmh0Y/0.jpg)](https://www.youtube.com/watch?v=i4-SfTGmh0Y)
 
 </div>
