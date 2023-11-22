@@ -122,6 +122,6 @@ Fotogrammi relativi alla crescita della coltura del pomodoto in ambiente control
 
 <div align="center" style="display:flex; flex-wrap: wrap; justify-content: center;">
 
-[![Watch the video](https://img.youtube.com/vi/i4-SfTGmh0Y/0.jpg)](https://www.youtube.com/watch?v=i4-SfTGmh0Y)
+[![Watch the video](https://img.youtube.com/vi/yn9_0HByvpk/0.jpg)](https://www.youtube.com/watch?v=yn9_0HByvpk)
 
 </div>
