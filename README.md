@@ -53,10 +53,13 @@ Gli attuatori utilizzati sono i seguenti:
 
 
 ## Circuito
+🔗 [Fritzing file](./assets/Semenzaio%20Smart.fzz)
+
 <div align="center">
     <img src="assets/semenzaio-smart-circuit.jpg" width=""></img>
 </div>
-🔗 [Fritzing file](assets/Semenzaio%20Smart.fzz)
+
+
 
 
 ## App
