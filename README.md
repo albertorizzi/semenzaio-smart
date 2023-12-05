@@ -56,6 +56,8 @@ Gli attuatori utilizzati sono i seguenti:
 <div align="center">
     <img src="assets/semenzaio-smart-circuit.jpg" width=""></img>
 </div>
+🔗 [Fritzing file](assets/Semenzaio%20Smart.fzz)
+
 
 ## App
 L'app mobile consente di visualizzare i dati in tempo reale, aggiornati ogni 5 secondi, prelevando i valori dalla collezione "logs" di Firebase in tempo reale. Inoltre, offre la possibilità di modificare la coltura e le relative impostazioni, poiché Arduino funge anche da WebServer. Attraverso chiamate HTTP, è possibile controllare l'accensione/spegnimento della ventola e gestire il cambio della coltura.
